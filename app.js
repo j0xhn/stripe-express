@@ -30,39 +30,34 @@ if ('development' == app.get('env')) {
 }
 app.get('/', routes.index);
 app.get('/users', user.list);
-// Set your secret key: remember to change this to your live secret key in production
-// See your keys here https://manage.stripe.com/account
-stripe.setApiKey("sk_F2hmCJopv2QLLRHfwi43dtXzeafKe");
-// 2424 2424 2424 2424
-// (Assuming you're using express - expressjs.com)
 // Get the credit card details submitted by the form
-  app.post('/charge',
-    function(req,res) {
-      // obtain StripeToken
-      var transaction = req.body;
-      var stripeToken = transaction.stripeToken;
-      // create charge
-      var charge =
-      {
-        amount: 1*100, 
-        currency: 'USD',
-        card: stripeToken
-      };
-      stripe.charges.create(charge,
-        function(err, charge) {
-          if(err)
-            console.log(err);
-          else
-            {
-              res.json(charge);
-              console.log('Successful charge sent to Stripe!');
-            };
-        }
-      );
-    // render congrats page
-    res.sendfile('public/html/congrats.html');
-    }
-  );
+app.post('/charge',
+  function(req,res) {
+    // obtain StripeToken
+    var transaction = req.body;
+    var stripeToken = transaction.stripeToken;
+    // create charge
+    var charge =
+    {
+      amount: 1*100, 
+      currency: 'USD',
+      card: stripeToken
+    };
+    stripe.charges.create(charge,
+      function(err, charge) {
+        if(err)
+          console.log(err);
+        else
+          {
+            res.json(charge);
+            console.log('Successful charge sent to Stripe!');
+          };
+      }
+    );
+  // render congrats page
+  res.sendfile('public/html/congrats.html');
+  }
+);
 
 
 

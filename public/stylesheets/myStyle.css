@@ -9,6 +9,9 @@ body{
   position: relative;
   -webkit-font-smoothing:antialiased;
 }
+.inner input{
+  -webkit-font-smoothing: none;
+}
 h1{
   font-family: 'Lobster', cursive;
   color: white;
