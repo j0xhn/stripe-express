@@ -8,9 +8,9 @@ var routes = require('./routes');
 var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
-var stripe = require("stripe")(
-  "sk_F2hmCJopv2QLLRHfwi43dtXzeafKe"
-);
+///////////////////////////////////
+// ADD CODE HERE FOR REQUIRE
+///////////////////////////////////
 var app = express();
 
 // all environments
@@ -30,49 +30,9 @@ if ('development' == app.get('env')) {
 }
 app.get('/', routes.index);
 app.get('/users', user.list);
-// Get the credit card details submitted by the form
-app.post('/charge',
-  function(req,res) {
-    // obtain StripeToken
-    var transaction = req.body;
-    var stripeToken = transaction.stripeToken;
-    // create charge
-    var charge =
-    {
-      amount: 1*100, 
-      currency: 'USD',
-      card: stripeToken
-    };
-    stripe.charges.create(charge,
-      function(err, charge) {
-        if(err)
-          console.log(err);
-        else
-          {
-            res.json(charge);
-            console.log('Successful charge sent to Stripe!');
-          };
-      }
-    );
-  // render congrats page
-  res.sendfile('public/html/congrats.html');
-  }
-);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+///////////////////////////////////
+// ADD CODE HERE FOR CHARGING CARDS
+///////////////////////////////////
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
