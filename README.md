@@ -1,20 +1,32 @@
-#$how Me The Money
+##$how Me The Money ~ Stripe + Express
+
+>"The internet can make you rich.  Like have-your-own-private-island type of rich.  It's awesome" <br>
+>&nbsp;-&nbsp;John D. Storey
 
 Stripe is a payment processor that makes integration more simple.  Stripe sets itself apart from Paypal and Authorize.net by being a simplified and secure solution.Don't confuse it with online shopping carts like Shopify or Big Cartel.  It simply lets you integrate with those, or your own shopping cart.  Most similiar is [Braintree](https://www.braintreepayments.com/) that actually offers to waive $50,000 of fees and from what I can tell operates the same way as Stripe with an Auth key and server side processing.  Awesome.
 
-The major security feature it gives is that there is no need to save or be responsible for the credit card information entered on your site. PCI compliance for 1,000,000 e-commerce transactions is expected to be $100,000+ for compliance. Stripe takes care of that for you.  Awesome.
+The major security feature it gives is that there is no need to save or be responsible for the credit card information entered on your site. PCI compliance for 1,000,000 e-commerce transactions is expected to be $100,000+ for compliance. Stripe takes care of that for you.  Double Awesome.
 
-[Here is a link](https://memberful.com/blog/stripe-vs-paypal/) that talks about the differences between paypal and stripe including fees, security, and customer service.
+For more information here is a site about [differences between PayPal and Stripe](https://memberful.com/blog/stripe-vs-paypal/) fees, security, customer service etc...
 
-## Basic Usage
+### Basic Usage
 
-Stripe can be accessed through their [API](https://stripe.com/docs/api), an included [Stripe.js file](https://stripe.com/docs/stripe.js), and a pre-made [Checkout](https://stripe.com/checkout) solution.
+An authorization token can be generated through an included [Stripe.js file](https://stripe.com/docs/stripe.js) or a pre-made [Checkout](https://stripe.com/checkout) solution.  However, charging the card is done server side through one of their many [API Options](https://stripe.com/docs/api). 
 
-We'll use both
+If you haven't already setup an account go to [Stripe.com](https://stripe.com/) and set one up.  We'll be using their "testing dashboard".
 
+We'll start by using checkout.  Simply insert this code into your view file.
 ```html
-<link rel="stylesheet" href="http://lab.lepture.com/editor/editor.css" />
-<script type="text/javascript" src="http://lab.lepture.com/editor/editor.js"></script>
+<form action="/charge" method="POST">
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="{ TEST PK_KEY HERE }"
+    data-image="/images/Logo_Dark_50.png"
+    data-name="Demo Site"
+    data-description="Private Island ($500,000.00)"
+    data-amount="2000">
+  </script>
+</form>
 ```
 
 Having done this, an editor instance can be created:
