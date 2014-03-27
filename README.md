@@ -1,4 +1,4 @@
-##$how Me The Money ~ Stripe + Express
+##Buying a Private Island using Stripe//Node
 
 >"The internet can make you rich.  Like have-your-own-private-island type of rich.  It's awesome" <br>
 >&nbsp;-&nbsp;John D. Storey
