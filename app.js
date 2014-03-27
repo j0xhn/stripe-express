@@ -59,6 +59,36 @@ app.post('/charge',
   }
 );
 
+app.post('/subscribe',
+  function(req,res) {
+//creates plan
+  //   console.log('req', req);
+  //   console.log('res', res);
+  //   //creates plan
+  //   stripe.plans.create({
+  //   amount: 999,
+  //   interval: "month",
+  //   name: "Amazing Gold Plan",
+  //   currency: "usd",
+  //   id: "gold"
+  // }, function(err, plan) {
+  //   // asynchronously called
+  // });
+  var stripeToken = req.body.stripeToken;
+
+  stripe.customers.create({
+    card: stripeToken,
+    plan: "gold",
+    //how do I get email & other info?
+    email: 'sample@example.com'
+      }, function(err, customer) {
+    // ...
+  });
+  // render congrats page
+  res.sendfile('public/html/congrats.html');
+  console.log('you subscribed!')
+});
+
 
 
 
