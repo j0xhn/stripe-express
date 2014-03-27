@@ -161,14 +161,34 @@ xmlns:fb="http://www.facebook.com/2008/fbml"><!--formatted-->
           <h4><b>Backpacker</b></h4>
           <h5><em>1 Person</em></h5>
           <p>3 nights under the Caribbean stars in a hammock. Join fellow islanders in the group villa to mix and mingle. Adventure, activites, and great people. <br><b>$499</b></p>
-          <a href="mailto:info@xoisland.com" class="btn packageBtn" onClick="_gaq.push(['_trackEvent', 'Body Links', 'Click', 'Backpacker Package']);"> Learn More </a>
+<!--           <a href="mailto:info@xoisland.com" class="btn packageBtn" onClick="_gaq.push(['_trackEvent', 'Body Links', 'Click', 'Backpacker Package']);"> Learn More </a> -->
+          <form action="/charge" method="POST">
+            <script
+              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="pk_xofIegbkEkF0NuExZk6B8chSHTMvR"
+              data-image="../images/Logo_Dark_200.png"
+              data-name="Backpacker"
+              data-description="Your Own Private Island"
+              data-amount="49900">
+            </script>
+          </form>
         </div>
         <div class="col-lg-3">
           <img src="../images/s3.png">
           <h4><b>Bed on Beach</b></h4>
           <h5><em>2 People</em></h5>
           <p>Candle-lit beaches, a canopy bed on the beach and  seclusion. Surround yourself with beauty, nature, and share it with someone special.<br><b>$1,199</b></p>
-          <a href="mailto:info@xoisland.com" class="btn packageBtn" onClick="_gaq.push(['_trackEvent', 'Body Links', 'Click', 'Cabana Package']);"> Learn More </a>
+<!--           <a href="mailto:info@xoisland.com" class="btn packageBtn" onClick="_gaq.push(['_trackEvent', 'Body Links', 'Click', 'Cabana Package']);"> Learn More </a> -->
+          <form action="/charge" method="POST">
+            <script
+              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="pk_xofIegbkEkF0NuExZk6B8chSHTMvR"
+              data-image="../images/Logo_Dark_200.png"
+              data-name="Bed on Beach"
+              data-description="Your Own Private Island"
+              data-amount="119900">
+            </script>
+          </form>
         </div>
         <div class="col-lg-3">
           <img src="../images/s1.png">
@@ -176,7 +196,17 @@ xmlns:fb="http://www.facebook.com/2008/fbml"><!--formatted-->
           <h5><em>2-4 People</em></h5>
           <p>Get away from the routine to invest time with those closest to you. Your own bathroom, king-sized, and twin beds. Ideal for a couple or small family.<br><b>$2,699</b>  
           </p>
-          <a href="mailto:info@xoisland.com" class="btn packageBtn" onClick="_gaq.push(['_trackEvent', 'Body Links', 'Click', 'Cabana Package']);"> Learn More </a>
+          <!-- <a href="mailto:info@xoisland.com" class="btn packageBtn" onClick="_gaq.push(['_trackEvent', 'Body Links', 'Click', 'Cabana Package']);"> Learn More </a> -->
+          <form action="/charge" method="POST">
+            <script
+              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="pk_xofIegbkEkF0NuExZk6B8chSHTMvR"
+              data-image="../images/Logo_Dark_200.png"
+              data-name="Private Villa"
+              data-description="Your Own Private Island"
+              data-amount="269900">
+            </script>
+          </form>
         </div>
         <div class="col-lg-3">
           <img src="../images/s4.png">
@@ -184,7 +214,17 @@ xmlns:fb="http://www.facebook.com/2008/fbml"><!--formatted-->
           <h5><em>6-8 People</em></h5>
           <p>360&deg views of the entire island from your balcony. Additional private villa to sleep 6 comfortably. Perfect for planning a family or large group trip. <br><b>$5,499</b>  
           </p>
-          <a href="mailto:info@xoisland.com" class="btn packageBtn" onClick="_gaq.push(['_trackEvent', 'Body Links', 'Click', 'Master Group Package']);"> Learn More</a>
+<!--           <a href="mailto:info@xoisland.com" class="btn packageBtn" onClick="_gaq.push(['_trackEvent', 'Body Links', 'Click', 'Master Group Package']);"> Learn More</a> -->
+          <form action="/charge" method="POST">
+            <script
+              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="pk_xofIegbkEkF0NuExZk6B8chSHTMvR"
+              data-image="../images/Logo_Dark_200.png"
+              data-name="Master Suite"
+              data-description="Your Own Private Island"
+              data-amount="549900">
+            </script>
+          </form>
         </div>
         <div class="row">
         <div class='col-lg-8 col-lg-offset-2'>
@@ -257,15 +297,42 @@ xmlns:fb="http://www.facebook.com/2008/fbml"><!--formatted-->
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
-        <h3>REQUEST THE COMPLETE INFORMATION PACKET
-        </h3>
-        <!-- Begin MailChimp Signup Form -->
-        <form action="http://xoisland.us3.list-manage.com/subscribe/post?u=89c53c32c5e735943d83e3331&amp;id=f5016dc562" method="post" class="form-inline" target="_blank" novalidate>
-        <input type="email" value="" name="EMAIL" class="form-control" placeholder="Email" required>
+          <h2> BUY THE WHOLE ISLAND </h2>
+          <div class='paymentForm'>
+            <form action="/charge" method="POST" id="payment-form">
+              <span class="payment-errors"></span>
+              <div class="form-row">
+                <label>
+                  <span>Card Number</span>
+                  <input type="text" size="20" data-stripe="number"/>
+                </label>
+              </div>
+              <div class="form-row">
+                <label>
+                  <span>CVC</span>
+                  <input type="text" size="4" data-stripe="cvc"/>
+                </label>
+                <label>
+                  <span>Expiration</span>
+                  <input type="text" size="3" data-stripe="exp-month" placeholder='MM'/>
+                </label>
+                <span> / </span>
+                <input type="text" size="4" data-stripe="exp-year" placeholder='YYYY'/>
+              </div>
+              <div class="form-row">
+                <button class='btn' id='requestBtn' type="submit">Submit Payment</button>
+              </div>
+            </form>
+          </div>
+          <h3>REQUEST THE COMPLETE INFORMATION PACKET
+          </h3>
+          <!-- Begin MailChimp Signup Form -->
+          <form action="http://xoisland.us3.list-manage.com/subscribe/post?u=89c53c32c5e735943d83e3331&amp;id=f5016dc562" method="post" class="form-inline" target="_blank" novalidate>
+          <input type="email" value="" name="EMAIL" class="form-control" placeholder="Email" required>
           <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
           <div style="position: absolute; left: -5000px;"><input type="text" name="b_89c53c32c5e735943d83e3331_f5016dc562" value=""></div>
-        <input type="submit" value="Send Request" class="btn" id='requestBtn' onClick="_gaq.push(['_trackEvent', 'Request Info', 'Click', 'Mail Chimp']);">
-        </form>
+          <input type="submit" value="Send Request" class="btn" id='requestBtn' onClick="_gaq.push(['_trackEvent', 'Request Info', 'Click', 'Mail Chimp']);">
+          </form>
         <!--End mc_embed_signup-->
         </div>
       </div>
@@ -371,5 +438,6 @@ xmlns:fb="http://www.facebook.com/2008/fbml"><!--formatted-->
   <script src="../javascripts/smoothscroll.js"></script>
   <script src="../javascripts/islandMain.js"></script>
   <script src="../javascripts/lightbox-2.6.min.js"></script>
+  <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 </body>
 </html>
