@@ -1,443 +1,68 @@
 <!DOCTYPE html>
+<head></head>
+<body>
+<h1>Show Me The Money</h1>
+<!-- Checkout -->
+<div class='stripeCheckout'>
+  <form action="/charge" method="POST">
+    <script
+      src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      data-key="pk_xofIegbkEkF0NuExZk6B8chSHTMvR"
+      data-image="/images/Logo_Dark_200.png"
+      data-name="Show Me the Money"
+      data-description="Let's do $1"
+      data-amount="100">
+    </script>
+  </form>
+</div>
+<!-- .JS -->
+<h1>Subscribe</h1>
+<div class='paymentForm'>
+  <form action="/subscribe" method="POST" id="payment-form">
+    <span class="payment-errors"></span>
 
-<!-- ========== META INFO ========== -->
-
-<!-- FACEBOOK GRAPH INFO -->
-<html xmlns="http://www.w3.org/1999/xhtml"
-xmlns:og="http://ogp.me/ns#"
-xmlns:fb="http://www.facebook.com/2008/fbml"><!--formatted-->
-<html lang="en">
-<head>
-<!-- GOOGLE ANALYTICS -->
-<script type = 'text/javascript'>
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-47790088-1']);
-  _gaq.push(['_trackPageview']);
-  (function() {
-  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-<!-- END GOOGLE ANALYTICS -->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Ever want to buy a private island in the Caribbean? Get your piece of the very first crowdfunded private island for as little as $149. ">
-<meta name="author" content="John D. Storey">
-<link rel="shortcut icon" href="favicon.ico">
-<title>Crowd-fund a Private Island</title>
-<!-- FACEBOOK INFO -->
-<meta property="fb:admins" content="203101784" />
-<meta property="og:title" content="Crowdfund a Private Island ~ $499" />
-<meta property="og:description" content="Make history and get your piece of the very first crowdfunded private island.  100% guaranteed this is the coolest thing you've seen on Facebook all week." />
-<meta property="og:type" content="website" />
-<meta property="og:image" content="http://xoisland.com/assets/img/onSite/island_pretty.jpg" >
-<meta property="og:image:type" content="image/jpeg">
-<meta property="og:image:width" content="300">
-<meta property="og:image:height" content="200">
-<meta property="og:url" content="http://www.xoisland.com/">
-<meta property="og:site_name" content="Crowdfund a Private Island" /><!--formatted-->
-<!-- Bootstrap core CSS -->
-<link href="../stylesheets/bootstrap.css" rel="stylesheet">
-<!-- Custom styles for this template -->
-<link href="../stylesheets/main.css" rel="stylesheet">
-<link href="../stylesheets/responsive.css" rel="stylesheet">
-<link rel="stylesheet" href="../stylesheets/font-awesome.min.css">
-<link href="../stylesheets/lightbox.css" rel="stylesheet" />
-<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
-</head>
-  <body data-spy="scroll" data-offset="0" data-target="#theMenu">
-
-<!-- ========== MOBILE MENU ========== -->
-
-  <nav class="menu" id="theMenu">
-    <div class="menu-wrap">
-      <h1 class="logo"><a href="index.html#home">XO Island</a></h1>
-      <i class="icon-remove menu-close"></i>
-      <a href="#home" class="smoothScroll" onClick="_gaq.push(['_trackEvent', 'Navbar Links', 'Touch', 'Home']);">Home</a>
-      <a href="#aboutNav" class="smoothScroll" onClick="_gaq.push(['_trackEvent', 'Navbar Links', 'Touch', 'About']);">LOCATION</a>
-      <a href="#packageNav" class="smoothScroll" onClick="_gaq.push(['_trackEvent', 'Navbar Links', 'Touch', 'Packages']);">Packages</a>
-      <a href="#faq" class="smoothScroll" onClick="_gaq.push(['_trackEvent', 'Navbar Links', 'Touch', 'FAQ']);">FAQ</a>
-      <a href="#members" class="smoothScroll" onClick="_gaq.push(['_trackEvent', 'Navbar Links', 'Touch', 'Members']);">Members</a>
-      <a href="#contact" class="smoothScroll" onClick="_gaq.push(['_trackEvent', 'Navbar Links', 'Touch', 'Contact']);">Contact</a>
-    </div>
-    <!-- Menu button -->
-    <div id="menuToggle"><i class="icon-reorder"></i></div>
-  </nav>
-
-<!-- ========== RESPONSIVE MENU ========== -->
-
-  <div class="navbar navbar-fixed-top" id="topNav">
-    <div class="container">
-      <ul class="nav row">
-        <li class="col-12 col-sm-2"><a id="menu-link-2" href="#aboutNav" title="Next Section" onClick="_gaq.push(['_trackEvent', 'Navbar Links', 'Click', 'About']);">ABOUT</a></li>
-        <li class="col-12 col-sm-2"><a id="menu-link-1" href="#mapNav" title="Next Section" onClick="_gaq.push(['_trackEvent', 'Navbar Links', 'Click', 'Home']);">LOCATION</a></li>
-        <li class="col-12 col-sm-2"><a id="menu-link-3" href="#packageNav" title="Next Section" onClick="_gaq.push(['_trackEvent', 'Navbar Links', 'Click', 'Packages']);">PACKAGES</a></li>
-        <li class="col-12 col-sm-2"><a id="menu-link-4" href="#faq" onClick="_gaq.push(['_trackEvent', 'Navbar Links', 'Click', 'FAQ']);">FAQ</a></li>
-        <li class="col-12 col-sm-2"><a id="menu-link-5" href="#members" title="Next Section" onClick="_gaq.push(['_trackEvent', 'Navbar Links', 'Click', 'Members']);"> <span class="text">MEMBERS</span></a></li>
-        <li class="col-12 col-sm-2"><a id="menu-link-6" href="#contact" title="Next Section" onClick="_gaq.push(['_trackEvent', 'Navbar Links', 'Click', 'Contact']);"><span class="text">CONTACT</span></a></li> 
-      </ul>
-      <div class="row">
-        <div class="col-sm-2 active-menu"></div>
-      </div>
-    </div><!-- /.container -->
-  </div><!-- /.navbar -->
-
-<!-- ========== HEADER SECTION ========== -->
-
-  <section id="home" name="home"></section>
-  <div class="headerwrap" id='home'>
-    <div class="container">
-      <br>
-      <h1 id="responsive">XO ISlAND</h1>
-      <h2>Vacation on Your Own Private Island</h2>
-      <br>
-      <br>
-      <a data-toggle="modal" data-target="#myModal" onClick="_gaq.push(['_trackEvent', 'Body Links', 'Click', 'Video Click']);">
-        <img src='../images/onSite/videoPlayButton.png' id='videoButton'>
-      </a>
-
-<!-- ========== VIDEO FOR MOBILE ========== -->
-
-      <div class='video' id='mobileVideo'>
-        <video src="../video/IntroVideo.mp4" width='100%' poster='../video/videoPoster.jpg' controls onClick="_gaq.push(['_trackEvent', 'Body Links', 'Click', 'Video Click']);">
-        Sorry, looks like your browser doesn't support video playback. Don't worry though, you can <a href="../video/IntroVideo.mp4">download it here</a>
-          and watch it on your computer.
-        </video>
-      </div>
-
-<!-- ========== VIDEO MODAL ========== -->
-
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-body" id='modal-video'>
-              <video src="../video/IntroVideo.mp4" width='100%' poster='../video/videoPoster.jpg' controls id='videoElem'>
-              Sorry, looks like your browser doesn't support video playback. Don't worry though, you can <a href="../video/IntroVideo.mp4">download it here</a>
-                and watch it on your computer.
-              </video>
-            </div>
-          </div>
-        </div>
-      </div><!-- /modal -->
-    </div><!-- /container -->
-  </div><!-- /headerwrap -->
-
-<!-- ========== ABOUT SECTION ========== -->
-
-  <div id="aboutNav"></div>
-  <div id="w">
-    <div class="container" id="about">
-      <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
-        <h3> A PLACE <bold>TO CREATE </bold> NEW FRIENDSHIPS, MEMORIES<br/>
-          <bold>AND ENJOY</bold> OUR LIMITED TIME TOGETHER HERE ON EARTH.<br><br>WELCOME TO <bold>XO ISLAND</bold>
-        </h3>
-        </div>
-      </div>
-    </div><!-- /container -->
-  </div><!-- /w -->
-
-  <!-- ========== MAP SECTION ========== -->
-
-  <section id="mapNav" name="map"></section>
-    <div class = "map">
-      <img src="../images/map.png">
+    <div class="form-row">
+      <label>
+        <span>Card Number</span>
+        <input type="text" size="20" data-stripe="number"/>
+      </label>
     </div>
 
-  <!-- ========== PACKAGE SECTION ========== -->
-
-  <div id="packageNav"></div>
-  <section id="packages" name="packages"></section>
-  <div class="g">
-    <div class="container">
-      <div class='row'>
-
-  <!-- ========== NEW PACKAGE SECTION ========== -->
-
-        <div class="col-lg-3" id='groupPackages'>
-          <img src="../images/s2.png">
-          <h4><b>Backpacker</b></h4>
-          <h5><em>1 Person</em></h5>
-          <p>3 nights under the Caribbean stars in a hammock. Join fellow islanders in the group villa to mix and mingle. Adventure, activites, and great people. <br><b>$499</b></p>
-<!--           <a href="mailto:info@xoisland.com" class="btn packageBtn" onClick="_gaq.push(['_trackEvent', 'Body Links', 'Click', 'Backpacker Package']);"> Learn More </a> -->
-          <form action="/charge" method="POST">
-            <script
-              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-              data-key="pk_xofIegbkEkF0NuExZk6B8chSHTMvR"
-              data-image="../images/Logo_Dark_200.png"
-              data-name="Backpacker"
-              data-description="Your Own Private Island"
-              data-amount="49900">
-            </script>
-          </form>
-        </div>
-        <div class="col-lg-3">
-          <img src="../images/s3.png">
-          <h4><b>Bed on Beach</b></h4>
-          <h5><em>2 People</em></h5>
-          <p>Candle-lit beaches, a canopy bed on the beach and  seclusion. Surround yourself with beauty, nature, and share it with someone special.<br><b>$1,199</b></p>
-<!--           <a href="mailto:info@xoisland.com" class="btn packageBtn" onClick="_gaq.push(['_trackEvent', 'Body Links', 'Click', 'Cabana Package']);"> Learn More </a> -->
-          <form action="/charge" method="POST">
-            <script
-              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-              data-key="pk_xofIegbkEkF0NuExZk6B8chSHTMvR"
-              data-image="../images/Logo_Dark_200.png"
-              data-name="Bed on Beach"
-              data-description="Your Own Private Island"
-              data-amount="119900">
-            </script>
-          </form>
-        </div>
-        <div class="col-lg-3">
-          <img src="../images/s1.png">
-          <h4><b>Private Villa</b></h4>
-          <h5><em>2-4 People</em></h5>
-          <p>Get away from the routine to invest time with those closest to you. Your own bathroom, king-sized, and twin beds. Ideal for a couple or small family.<br><b>$2,699</b>  
-          </p>
-          <!-- <a href="mailto:info@xoisland.com" class="btn packageBtn" onClick="_gaq.push(['_trackEvent', 'Body Links', 'Click', 'Cabana Package']);"> Learn More </a> -->
-          <form action="/charge" method="POST">
-            <script
-              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-              data-key="pk_xofIegbkEkF0NuExZk6B8chSHTMvR"
-              data-image="../images/Logo_Dark_200.png"
-              data-name="Private Villa"
-              data-description="Your Own Private Island"
-              data-amount="269900">
-            </script>
-          </form>
-        </div>
-        <div class="col-lg-3">
-          <img src="../images/s4.png">
-          <h4><b>Master Suite</b></h4>
-          <h5><em>6-8 People</em></h5>
-          <p>360&deg views of the entire island from your balcony. Additional private villa to sleep 6 comfortably. Perfect for planning a family or large group trip. <br><b>$5,499</b>  
-          </p>
-<!--           <a href="mailto:info@xoisland.com" class="btn packageBtn" onClick="_gaq.push(['_trackEvent', 'Body Links', 'Click', 'Master Group Package']);"> Learn More</a> -->
-          <form action="/charge" method="POST">
-            <script
-              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-              data-key="pk_xofIegbkEkF0NuExZk6B8chSHTMvR"
-              data-image="../images/Logo_Dark_200.png"
-              data-name="Master Suite"
-              data-description="Your Own Private Island"
-              data-amount="549900">
-            </script>
-          </form>
-        </div>
-        <div class="row">
-        <div class='col-lg-8 col-lg-offset-2'>
-        <h3>
-          <em>UNLIMITED ACCESS</em> MEANS YOUR 3 NIGHT PACKAGES ARE <b>TRANSFERABLE</b> & <b>RE-USABLE</b> ALL YEAR LONG, <b>YEAR AFTER YEAR</b>.
-          <BR><br>
-          IF YOU HAVE OVER <b>20 PEOPLE,</b> INQUIRE ABOUT <b>FULL ISLAND</b> RENTALS <a href="mailto:info@xoisland.com" onClick="_gaq.push(['_trackEvent', 'Body Links', 'Click', 'Full Island Rental Inquiry']);">HERE</a></h3>
-        <br>
-        <br>
-        </div>
-      </div>
-      </div>
-    </div><!-- /container -->
-  </div><!-- /g -->
-
-  <!-- ========== IMAGE SECTION ========== -->
-
-  <div id="w">
-    <h3><strong>Island Image Gallery</strong></h3>
-    <div class='images' id='topSpace'>
-
-
-    <iframe id='mapIframe' src="https://www.google.com/maps/embed?pb=!1m16!1m11!1m3!1d132666.31700395612!2d-83.423056!3d12.437164!2m2!1f0!2f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!1s0x0%3A0x4569f4b8f1a3d22b!5e1!3m2!1sen!2sus!4v1392680750564" width="300" height="200" frameborder="0"></iframe>
-    <a href="../images/island/structure_path.jpg" data-lightbox="gallery" onClick="_gaq.push(['_trackEvent', 'Body Links', 'Click', 'Sturcture Path Image']);"><img src="../images/onSite/structure_path.jpg"></a>
-    <a href="../images/island/people_baracuda.jpg" data-lightbox="gallery" onClick="_gaq.push(['_trackEvent', 'Body Links', 'Click', 'People Baracuda Image']);"><img src="../images/onSite/people_baracuda.jpg"></a>
-    <a href="../images/island/island_volleyball.png" data-lightbox="gallery" onClick="_gaq.push(['_trackEvent', 'Body Links', 'Click', 'Island Volleyball Image']);"><img src="../images/onSite/island_volleyball.jpg"></a>
-
-    <a href="../images/island/activity_volleyball.jpg" data-lightbox="gallery" onClick="_gaq.push(['_trackEvent', 'Body Links', 'Click', 'Activity Volleyball Image']);"><img src="../images/onSite/activity_volleyball.jpg"></a>
-    <a href="../images/island/structure_dock.jpg" data-lightbox="gallery" onClick="_gaq.push(['_trackEvent', 'Body Links', 'Click', 'Structure Dock Image']);"><img src="../images/onSite/structure_dock.jpg"></a>
-    <a href="../images/island/structure_table.jpg" data-lightbox="gallery" onClick="_gaq.push(['_trackEvent', 'Body Links', 'Click', 'Structure Table Image']);"><img src="../images/onSite/structure_table.jpg"></a>
-    <a href="../images/island/structure_trees.jpg" data-lightbox="gallery" onClick="_gaq.push(['_trackEvent', 'Body Links', 'Click', 'Structure Trees Image']);"><img src="../images/onSite/structure_trees.jpg"></a>
-
+    <div class="form-row">
+      <label>
+        <span>CVC</span>
+        <input type="text" size="4" data-stripe="cvc"/>
+      </label>
     </div>
-  </div><!-- /w -->
-  
-<!-- ========== FAQ SECTION ========== -->
 
-  <div class="dg" id="faq">
-    <div class="container">
-      <div class="row">
-        <h3><strong>Frequently Asked Questions</strong></h3>
-        <div class="row-fluid" id='topSpace'>
-          <div class="col-lg-6" id="firstFaq">
-            <h3>Is this real?</h3>
-            <p>Absolutely. We saw <a href="http://tynan.com/island" onClick="_gaq.push(['_trackEvent', 'Body Links', 'Click', 'Tynan Blog Post']);"><a href='http://tynan.com/island' target='_blank'>this blog post</a> about fractional ownership and decided to do it differently.  At first it may seem a little far fetched, but it makes a lot of sense and the more you learn about it the more you'll love it.</p>
-
-            <h3>Are the packages above the only ones?</h3>
-            <p>We offer packages for nearly any interested group size. This includes multiple payment options and in-between packages. Send your questions to info@xoisland.com.</p>
-
-            <h3>When will the Island be ready to visit?</h3>
-            <p>XO Island is already developed with full amenities, it just needs to be purchased.  After we sell enough packages to purchase the island, we percieve it will take 3 months to get deed in hand and open the island up.</p>
-          </div> 
-          <div class="col-lg-6" id="faq">
-            <h3>What Does <i>Unlimited Access</i> Imply?</h3>
-            <p>It means that if your package hasn't been reserved two weeks in advance you are free to reserve it for as long as you wish.  This comes with the annual membership fee of $90/person (which is discounted with group packages)</p>
-
-            <h3>Have you been to the Island?</h3>
-            <p>Not yet. We've spoken with the realtor and plan on going down in April. Want to come? John and Bryson speak Spanish fluently, and have visited every country in Central America and have a good feel for the culture.</p>
-
-            <h3>Why the yearly fee?</h3>
-            <p>The up-front cost is the one-time purchase price for the package.  We need annual payments for regular maintenance and care of the island.</p>
-          </div>
-      </div>
+    <div class="form-row">
+      <label>
+        <span>Expiration (MM/YYYY)</span>
+        <input type="text" size="2" data-stripe="exp-month"/>
+      </label>
+      <span> / </span>
+      <input type="text" size="4" data-stripe="exp-year"/>
     </div>
-  </div>
-
-<!-- ========== MAIL CHIMP ========== -->
-
-  <div id="bl">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
-          <h2> BUY THE WHOLE ISLAND </h2>
-          <div class='paymentForm'>
-            <form action="/charge" method="POST" id="payment-form">
-              <span class="payment-errors"></span>
-              <div class="form-row">
-                <label>
-                  <span>Card Number</span>
-                  <input type="text" size="20" data-stripe="number"/>
-                </label>
-              </div>
-              <div class="form-row">
-                <label>
-                  <span>CVC</span>
-                  <input type="text" size="4" data-stripe="cvc"/>
-                </label>
-                <label>
-                  <span>Expiration</span>
-                  <input type="text" size="3" data-stripe="exp-month" placeholder='MM'/>
-                </label>
-                <span> / </span>
-                <input type="text" size="4" data-stripe="exp-year" placeholder='YYYY'/>
-              </div>
-              <div class="form-row">
-                <button class='btn' id='requestBtn' type="submit">Submit Payment</button>
-              </div>
-            </form>
-          </div>
-          <h3>REQUEST THE COMPLETE INFORMATION PACKET
-          </h3>
-          <!-- Begin MailChimp Signup Form -->
-          <form action="http://xoisland.us3.list-manage.com/subscribe/post?u=89c53c32c5e735943d83e3331&amp;id=f5016dc562" method="post" class="form-inline" target="_blank" novalidate>
-          <input type="email" value="" name="EMAIL" class="form-control" placeholder="Email" required>
-          <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-          <div style="position: absolute; left: -5000px;"><input type="text" name="b_89c53c32c5e735943d83e3331_f5016dc562" value=""></div>
-          <input type="submit" value="Send Request" class="btn" id='requestBtn' onClick="_gaq.push(['_trackEvent', 'Request Info', 'Click', 'Mail Chimp']);">
-          </form>
-        <!--End mc_embed_signup-->
-        </div>
-      </div>
-    </div><!-- /container -->
-  </div><!-- /w -->
-
-<!-- ========== MEMBERS SECTION ========== -->
-
-  <div class="g" id='members'>
-    <div class="container">
-      <div class="row">
-        <div class="bottomSpace"></div>
-        <h3>ABOUT US</h3>
-        <div class="col-lg-2"></div>
-        <div class="col-lg-8">
-          <br><br>
-          We are a group of individuals dedicated to accomplishing that which no one thinks we can. If we don’t do it, someone else will. So stop sitting around, stop making excuses and start doing what you truly desire. Because life is short, and the people that are crazy enough to think they can live it to the fullest and change the world... 
-          <br><br>
-           are the ones who actually do. </p>
-        </div>
-      </div>
-      <div class="col-lg-3 team">
-        <img class="img-circle" src="../images/people/Schuette.jpg" height="90" width="90">
-        <h4>Markus Schuette</h4>
-        <p>XO Island is about to revolutionize real-estate crowdfunding!</p>
-        <p>
-          <a href="https://www.facebook.com/markus.schuette" onClick="_gaq.push(['_trackEvent', 'People Links', 'Click', 'Markus Facebook']);"><i class="icon-facebook"></i></a>
-          <!-- <a href="index.html#" onClick="_gaq.push(['_trackEvent', 'People Links', 'Click', 'Markus Twitter']);"><i class="icon-twitter"></i></a> -->
-          <a href="mailto:schuette.markus@gmail.com" onClick="_gaq.push(['_trackEvent', 'People Links', 'Click', 'Markus Mail']);"><i class="icon-envelope"></i></a>
-        </p>
-      </div>
-      <div class="col-lg-3 team">
-        <img class="img-circle" src="../images/people/johnd.jpg" height="90" width="90">
-        <h4>John D. Storey</h4>
-        <p>Contact me if you want to help make XO Island even more awesomerer.</p>
-        <p>
-          <a href="http://www.facebook.com/johndangerstorey" onClick="_gaq.push(['_trackEvent', 'People Links', 'Click', 'John Facebook']);"><i class="icon-facebook"></i></a>
-          <a href="http://www.twitter.com/johnDANGRstorey" onClick="_gaq.push(['_trackEvent', 'People Links', 'Click', 'John Twitter']);"><i class="icon-twitter"></i></a>
-          <!-- <a href="index.html#"><i class="icon-envelope"></i></a> -->
-        </p>
-      </div>
-      <div class="col-lg-3 team">
-        <img class="img-circle" src="../images/people/bryson.jpg" height="90" width="90">
-        <h4>Bryson Hill</h4>
-        <p>Let's just say Sir Richard Branson better be watching his back...  </p>
-        <p>
-          <a href="https://www.facebook.com/BrysonCHill" onClick="_gaq.push(['_trackEvent', 'People Links', 'Click', 'Bryson Facebook']);"><i class="icon-facebook"></i></a>
-          <!-- <a href="index.html#" onClick="_gaq.push(['_trackEvent', 'People Links', 'Click', 'Bryson Twitter']);"><i class="icon-twitter"></i></a> -->
-          <a href="mailto:bryson.hill@gmail.com" onClick="_gaq.push(['_trackEvent', 'People Links', 'Click', 'Bryson Mail']);"><i class="icon-envelope"></i></a>
-        </p>
-      </div>
-      <div class="col-lg-3 team">
-        <img class="img-circle" src="../images/people/jeff.jpg" height="90" width="90">
-        <h4>Jeff Davis</h4>
-        <p>I love two things: Kobe Bryant and Private Islands.  Go Lakers!</p>
-        <p>
-          <a href="https://www.facebook.com/profile.php?id=193307685" onClick="_gaq.push(['_trackEvent', 'People Links', 'Click', 'Jeff Facebook']);"><i class="icon-facebook"></i></a>
-          <!-- <a href="index.html#" onClick="_gaq.push(['_trackEvent', 'People Links', 'Click', 'Jeff Twitter']);"><i class="icon-twitter"></i></a> -->
-          <a href="mailto:jtdavis247@gmail.com"><i class="icon-envelope"></i></a>
-        </p>
-      </div>
-    </div><!-- /container -->
-  </div><!-- /g -->
-  
-<!-- ========== FOOTER SECTION ========== -->
-
-  <section id="contact" name="contact"></section>
-  <div id="f">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4">
-          <h3><b>Send Us A Message:</b></h3>
-          <h3>info@xoisland.com</h3>
-          <br>
-        </div>
-        <div class="col-lg-4">  
-          <h3><b>Call Us:</b></h3>
-          <h3>(844)-XO-ISLAND</h3>
-          <span>(844) 964-7526</span>
-          <br>
-        </div>
-        <div class="col-lg-4">
-          <h3><b>Request an info packet:</b></h3>
-          <h3>
-            <a href="mailto:info@openapparatus.com" onClick="_gaq.push(['_trackEvent', 'Footer Links', 'Click', 'Request Packet']);">Click Here<a>    
-          </h3>
-          <br>
-        </div>
-      </div>
-    </div><!-- /container -->
-  </div><!-- /f -->
-
-<!-- ========== BOTTOM SECTION ========== -->
-
-  <div id="c">
-    <div class="container">
-      <p></a> Built by <a href="http://www.johndangerstorey.com" onClick="_gaq.push(['_trackEvent', 'Footer Links', 'Click', 'John D']);">John D. Storey</a></p>
-    </div>
-  </div>
-  <script src="../javascripts/jquery-1.10.2.min.js"></script>
-  <script src="../javascripts/classie.js"></script>
-  <script src="../javascripts/bootstrap.min.js"></script>
-  <script src="../javascripts/smoothscroll.js"></script>
-  <script src="../javascripts/islandMain.js"></script>
-  <script src="../javascripts/lightbox-2.6.min.js"></script>
+    <button type="submit">Submit Payment</button>
+  </form>
+</div>
+<!-- Checkout Subscription -->
+<h1>Subscribe via Checkout</h1>
+<div class='stripeCheckout'>
+  <form action="/subscribe" method="POST">
+    <script
+      src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      data-key="pk_xofIegbkEkF0NuExZk6B8chSHTMvR"
+      data-image="/images/Logo_Dark_200.png"
+      data-name="Show Me the Money"
+      data-description="Let's do $1"
+      data-amount="100">
+    </script>
+  </form>
+</div>
+<!-- SCRIPTS-->
   <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+>>>>>>> subscription
 </body>
 </html>
